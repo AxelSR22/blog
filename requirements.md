@@ -1,0 +1,17 @@
+asgiref==3.7.2
+certifi==2023.7.22
+cffi==1.15.1
+charset-normalizer==3.2.0
+cryptography==41.0.3
+Django==4.2.3
+django-anymail==10.1
+django-ckeditor==6.7.0
+django-js-asset==2.1.0
+idna==3.4
+mysqlclient==2.2.0
+Pillow==10.0.0
+pycparser==2.21
+requests==2.31.0
+sqlparse==0.4.4
+tzdata==2023.3
+urllib3==2.0.4
