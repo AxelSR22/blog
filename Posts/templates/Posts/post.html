@@ -1,0 +1,49 @@
+{% extends 'main.html' %}
+
+<h1>post page</h1>
+{% block content %}
+
+<div class="container">
+    <img class="img-thumbnail" src="{{ post.imagen_portada.url }}" alt="{{ post.title }}">
+    <h1>{{ post.title }}</h1>
+    <h5>{{ post.subtitulo }}</h5>
+    <p>{{ post.description|safe }}</p>
+    {% if request.user.is_superuser %}
+        <a href="{% url 'update-post' post.id %}" class="btn btn-success" role="button">Actualizar</a>
+        <a type="button" class="btn btn-danger" href="{% url 'delete-post' post.id %}?next={{ request.path }}">Eliminar</a>
+    {% endif %}
+</div>
+
+<hr>
+<h2>Comentarios</h2>
+
+{% if comments %}
+    <ul>
+        {% for comment in comments %}
+            <li>
+                <strong>{{ comment.author }}</strong> dijo:
+                <p>{{ comment.content }}</p>
+                <small>{{ comment.created_at }}</small>
+                {% if request.user.username == comment.author %}
+                    <a href="{% url 'edit_comment' comment.id %}">Editar</a>
+                    <a href="{% url 'delete_comment' comment.id %}">Eliminar</a>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No hay comentarios todavía.</p>
+{% endif %}
+
+{% if user.is_authenticated %}
+    <form method="post" class="comment-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Publicar comentario</button>
+    </form>
+{% else %}
+    <p>Para agregar un comentario, inicia sesión o crea una cuenta.</p>
+{% endif %}
+
+
+{% endblock content %}

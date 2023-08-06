@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<div class="container">
+    <h1>{{ categoria.nombre }}</h1>
+    <h2>Películas en esta categoría:</h2>
+    <div class="row row-cols-auto">
+        {% for post in peliculas %}
+            <div class="col-md">
+                <div class="card" style="width: 23rem;">
+                    <img src="{{ post.imagen_portada.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <p class="card-text">{{ post.subtitulo }}</p>
+                        <a href="{% url 'post' post.id %}" class="btn btn-primary">Leer Mas</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}

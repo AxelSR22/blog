@@ -1,0 +1,27 @@
+/* BLOG/static/css/categorias.css */
+
+/* Estilos para el título */
+h1 {
+    color: #3366cc;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para la lista de categorías */
+ul.list-group {
+    margin-top: 20px;
+}
+
+.list-group-item {
+    margin-bottom: 10px;
+}
+
+.list-group-item a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.list-group-item a:hover {
+    color: #ff6600;
+}

@@ -1,0 +1,24 @@
+/* BLOG/static/css/detalle_categoria.css */
+
+/* Estilos para el título de la categoría */
+h1 {
+    color: #3366cc;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para el título de las películas */
+h2 {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Estilos para la lista de películas */
+ul.list-group {
+    margin-top: 10px;
+}
+
+.list-group-item {
+    margin-bottom: 5px;
+}

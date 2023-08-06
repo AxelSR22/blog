@@ -1,0 +1,7 @@
+<!-- delete_comment.html -->
+<h1>¿Seguro que quieres eliminar este comentario?</h1>
+<p>{{ comment.content }}</p>
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Eliminar</button>
+</form>
